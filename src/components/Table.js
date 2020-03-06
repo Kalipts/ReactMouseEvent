@@ -30,19 +30,9 @@ export default function Table() {
         setIsOpen(!isOpen);
     };
 
-    let toggleColor = () => {
-        setColor('red');
-    };
-
-    let toggleColor2 = () => {
-        setColor('yellow')
-    };
-
     let cells = [];
     for(let i = 0; i < 20; i++) {
-        cells.push(<Cell  onMouseMove={()=> cells.forEach((element, i)=> {
-            toggleColor()
-        })} onClick={()=> toggleModal()} inputColor={color}  >{i+1}</Cell>)
+        cells.push(<Cell onClick={()=> toggleModal()} inputColor={color} >{i+1}</Cell>)
     }
     return (
         <TableCalendar>
